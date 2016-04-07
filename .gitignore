@@ -1,1 +1,4 @@
+*.DS_Store
 *.class
+CodeJam/input.txt
+CodeJam/output.txt
