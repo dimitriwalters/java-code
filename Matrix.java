@@ -30,7 +30,7 @@ public class Matrix {
     return newMatrix;
   }
 
-  public static int[][] rotate90(int[][] matrix) {
+  public static int[][] rotate(int[][] matrix) {
     int[][] newMatrix = new int[matrix[0].length][matrix.length];
     for (int row=0; row<matrix.length; row++) {
       for (int col=0; col<matrix[0].length; col++) {
