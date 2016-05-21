@@ -2,8 +2,8 @@ public class Matrix {
   public static void printMatrix(int[][] matrix) {
     System.out.println("Matrix output:");
     for (int row=0; row<matrix.length; row++) {
-      for (int column=0; column<matrix[row].length; column++) {
-        System.out.print(matrix[row][column] + " ");
+      for (int col=0; col<matrix[row].length; col++) {
+        System.out.print(matrix[row][col] + " ");
       }
       System.out.println();
     }
@@ -13,8 +13,8 @@ public class Matrix {
     int[][] newMatrix = new int[matrix.length][];
     for (int row=0; row<matrix.length; row++) {
       newMatrix[row] = new int[matrix[row].length];
-      for (int column=0; column<matrix[row].length; column++) {
-        newMatrix[row][column] = matrix[row][column];
+      for (int col=0; col<matrix[row].length; col++) {
+        newMatrix[row][col] = matrix[row][col];
       }
     }
     return newMatrix;
@@ -23,8 +23,8 @@ public class Matrix {
   public static int[][] transpose(int[][] matrix) {
     int[][] newMatrix = new int[matrix[0].length][matrix.length];
     for (int row=0; row<matrix.length; row++) {
-      for (int column=0; column<matrix[0].length; column++) {
-        newMatrix[column][row] = matrix[row][column];
+      for (int col=0; col<matrix[0].length; col++) {
+        newMatrix[col][row] = matrix[row][col];
       }
     }
     return newMatrix;
@@ -33,8 +33,8 @@ public class Matrix {
   public static int[][] rotate90(int[][] matrix) {
     int[][] newMatrix = new int[matrix[0].length][matrix.length];
     for (int row=0; row<matrix.length; row++) {
-      for (int column=0; column<matrix[0].length; column++) {
-        newMatrix[column][matrix.length - 1 - row] = matrix[row][column];
+      for (int col=0; col<matrix[0].length; col++) {
+        newMatrix[col][matrix.length - 1 - row] = matrix[row][col];
       }
     }
     return newMatrix;
