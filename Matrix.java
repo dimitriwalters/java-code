@@ -64,8 +64,26 @@ public class Matrix {
 
   // in-place (N x N matrix)
   public static void rotateInPlace(int[][] matrix) {
-    transposeInPlace(matrix);
-    reverseRows(matrix);
+    // method 1
+    // transposeInPlace(matrix);
+    // reverseRows(matrix);
+
+    // method 2
+    int n = matrix.length;
+    for (int layer=0; layer<n/2; layer++) {
+      int first = layer;
+      int last = n - 1 - layer;
+      for (int i=first; i<last; i++) {
+        int top = matrix[first][i];
+        int right = matrix[i][last];
+        int bottom = matrix[last][last - i];
+        int left = matrix[last - i][first];
+        matrix[first][i] = left;
+        matrix[i][last] = top;
+        matrix[last][last - i] = right;
+        matrix[last - i][first] = bottom;
+      }
+    }
   }
 
   public static void main(String[] args) {
