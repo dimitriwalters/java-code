@@ -20,7 +20,11 @@ public class HashTable {
       if (list == null) {
         list = new ArrayList<Tuple>();
       }
-      list.add(0, new Tuple(version, value));
+      int i;
+      for (i=0; i<list.size(); i++) {
+        if (version >= list.get(i).first) break;
+      }
+      list.add(i, new Tuple(version, value));
       map.put(key, list);
     }
     public String get(Integer key) {
@@ -50,7 +54,11 @@ public class HashTable {
     HashMapV map = new HashMapV();
     map.put(123, "myvalue", 0);
     map.put(123, "mynewvalue", 3);
+    map.put(123, "myoldnewvalue", 1);
+    System.out.println(map.get(123, 0));
+    System.out.println(map.get(123, 1));
     System.out.println(map.get(123, 2));
+    System.out.println(map.get(123, 3));
     System.out.println(map.get(123, 4));
   }
 }
